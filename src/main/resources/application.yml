@@ -1,0 +1,22 @@
+spring:
+  #数据库连接配置
+  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/demo?useSSL=false&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+#    username: root
+#    password: 123456
+
+    driver-class-name: com.ibm.db2.jcc.DB2Driver
+    url: jdbc:db2://158.220.160.58:50000/dssdb:currentSchema=CHENTAO;
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: ilog
+    password: ilog
+
+#mybatis的相关配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo02.model
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true
